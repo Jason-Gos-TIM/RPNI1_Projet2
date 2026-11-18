@@ -11,9 +11,9 @@ if (stristr($_SERVER['HTTP_HOST'], 'local') || (substr($_SERVER['HTTP_HOST'], 0,
 // Selon l'environnement d'exécution (développement ou production)
 if ($blnLocal) {
     $strHost = 'localhost';
-    $strBD='26_biotim';
-    $strUser = '26_biotim';
-    $strPassword= 'timbio26'; //ajuster au bon mot de passe.
+    $strBD='26_rpni1_P2_Jason';
+    $strUser = '26_rpni1_P2_Jason';
+    $strPassword= 'rpni1_P2_Jason'; //ajuster au bon mot de passe.
     error_reporting(E_ALL);
 } else {
     $strHost = 'timunix3.csfoy.ca';
