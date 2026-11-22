@@ -13,7 +13,7 @@ if ($blnLocal) {
     $strHost = 'localhost';
     $strBD='26_rpni1_P2_Jason';
     $strUser = '26_rpni1_P2_Jason';
-    $strPassword= 'rpni1_P2_Jason'; //ajuster au bon mot de passe.
+    $strPassword= 'rpni1_P2_Jason';
     error_reporting(E_ALL);
 } else {
     $strHost = 'timunix3.csfoy.ca';

@@ -5,13 +5,7 @@
                 <a href="<?php echo $niveau ?>index.php" class="nav__link nav__link--active" aria-current="page">Accueil</a>
             </li>
             <li class="nav__list-item">
-                <a href="<?php echo $niveau ?>especes/index.php" class="nav__link">Liste des espèces</a>
-            </li>
-            <li class="nav__list-item">
-                <a href="#" class="nav__link">À propos</a>
-            </li>
-            <li class="nav__list-item">
-                <a href="#" class="nav__link">Nous contacter</a>
+                <a href="<?php echo $niveau ?>liste/index.php" class="nav__link">Liste des espèces</a>
             </li>
     </ul>
 </nav>
