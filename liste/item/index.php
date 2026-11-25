@@ -1,8 +1,16 @@
 <?php
 
 $niveau = "../../";
+$intNbItems = 0;
 
 include("$niveau" . "inc/config.inc.php");
+
+$intIdListe = $_GET["id"] ?? 1;
+
+$strRequete = $pdoConnexion->prepare("SELECT id_item, item, echeance, est_complete FROM t_item WHERE id_liste = :id");
+$strRequete->execute([ "id" => $intIdListe]);
+$arrItems = $strRequete->fetchAll();
+var_dump($arrItems);
 
 ?>
 <!DOCTYPE html>
@@ -16,6 +24,47 @@ include("$niveau" . "inc/config.inc.php");
 </head>
 <body>
     <?php include($niveau . "inc/fragments/navigation.php") ?>
+    <!-- <?php //foreach ($arrListes as $arrListe) { ?>
+        <li id="<?php //echo 'item' .  $intNbItems?>">
+            <p id="<?php //echo $arrListe['item'] ?>">
+                <?php //echo $arrListe['item'] ?>
+            </p>
+            <?php  //if($arrListe['echeance'] != NULL) {
+                //echo $arrListe['echeance'];
+                //} else {
+                //echo " ";
+                //} ?>
+            <a href="item/index.php?id=<?php //echo $arrListe['id_item'] ?>">
+                <?php //echo $arrListe['item'] ?>
+            </a>
+            <a href="item/index.php?id=<?php //echo $arrListe['id_item'] ?>">
+                <?php //echo $arrListe['item'] ?>
+            </a>
+        </li>
+    <?php //$intNbItems++;
+    //} ?> -->
+
+        <?php foreach ($arrItems as $arrItem) { ?>
+            <table id="<?php echo 'list' .  $intNbItems ?>">
+                <tr>
+                    <td>Nom:</td>
+                    <td><?php echo $arrItem['item'] ?></td>
+                </tr>
+                <?php  if($arrItem['echeance'] != NULL) { ?>
+                <tr>
+                    <td>Échéance:</td>
+                    <td><?php echo $arrItem['echeance'] ?></td>
+                </tr>
+                <?php } else {
+                echo " ";
+                } ?>
+                
+                <tr>
+                    <td><a href="option_Item.php?id<?php echo $arrItem['id_item']?>"></a></td>
+                </tr>
+            </table>
+        <?php $intNbItems++;
+         } ?>
     
 </body>
 </html>
