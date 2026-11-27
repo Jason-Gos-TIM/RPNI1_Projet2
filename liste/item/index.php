@@ -24,26 +24,6 @@ var_dump($arrItems);
 </head>
 <body>
     <?php include($niveau . "inc/fragments/navigation.php") ?>
-    <!-- <?php //foreach ($arrListes as $arrListe) { ?>
-        <li id="<?php //echo 'item' .  $intNbItems?>">
-            <p id="<?php //echo $arrListe['item'] ?>">
-                <?php //echo $arrListe['item'] ?>
-            </p>
-            <?php  //if($arrListe['echeance'] != NULL) {
-                //echo $arrListe['echeance'];
-                //} else {
-                //echo " ";
-                //} ?>
-            <a href="item/index.php?id=<?php //echo $arrListe['id_item'] ?>">
-                <?php //echo $arrListe['item'] ?>
-            </a>
-            <a href="item/index.php?id=<?php //echo $arrListe['id_item'] ?>">
-                <?php //echo $arrListe['item'] ?>
-            </a>
-        </li>
-    <?php //$intNbItems++;
-    //} ?> -->
-
         <?php foreach ($arrItems as $arrItem) { ?>
             <table id="<?php echo 'list' .  $intNbItems ?>">
                 <tr>
@@ -58,9 +38,8 @@ var_dump($arrItems);
                 <?php } else {
                 echo " ";
                 } ?>
-                
                 <tr>
-                    <td><a href="option_Item.php?id<?php echo $arrItem['id_item']?>"></a></td>
+                    <td><a href="option_Item.php?id=<?php echo $arrItem['id_item']?>">Modifier l'item</a></td>
                 </tr>
             </table>
         <?php $intNbItems++;
